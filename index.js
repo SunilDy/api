@@ -21,12 +21,7 @@ var allowCrossDomain = function(req, res, next) {
     }
 };
 
-app.configure(function () {
-    app.use(allowCrossDomain);
-    app.use(express.bodyParser());
-    app.use(app.router);
-    app.use(express.static(path.join(application_root, "public")));
-  });
+app.use(allowCrossDomain);
 
 // Connecting to Mlab
 const DB_USER = process.env.DB_USER || 'admin';
