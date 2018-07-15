@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require('mongoose')
 const graphqlHTTP = require('express-graphql');
 const Schema = require('./Schema/schema')
+const cors = require('cors');
 
 // Connecting to Mlab
 const DB_USER = process.env.DB_USER || 'admin';
