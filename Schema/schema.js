@@ -3,7 +3,8 @@ const {
     GraphQLObjectType,
     GraphQLString,
     GraphQLNonNull,
-    GraphQLSchema
+    GraphQLSchema,
+    GraphQLList
 } = require('graphql');
 const User = require('../model/User');
 
@@ -27,6 +28,12 @@ const Query = new GraphQLObjectType({
             resolve(_,{name,password}) {
                 const user = User.findOne({name, password});
                 return user;
+            }
+        },
+        users: {
+            type: new GraphQLList(UserType),
+            resolve(parent,args) {
+                return User.find({})
             }
         }
     }
