@@ -13,6 +13,8 @@ mongoose.connection.once('open', () => {
     console.log('Connected to Mlab')
 })
 
+app.use(cors());
+
 // Config GraphQL
 app.use('/graphql', graphqlHTTP({
     schema:Schema,

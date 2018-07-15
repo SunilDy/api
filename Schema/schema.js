@@ -21,10 +21,11 @@ const Query = new GraphQLObjectType({
         user: {
             type: UserType,
             args: {
-                name: {type:new GraphQLNonNull(GraphQLString)}
+                name: {type:new GraphQLNonNull(GraphQLString)},
+                password: {type:new GraphQLNonNull(GraphQLString)}
             },
-            resolve(parent,args) {
-                let user = User.find({name:args.name})
+            resolve(_,{name,password}) {
+                const user = User.findOne({name, password});
                 return user;
             }
         }
