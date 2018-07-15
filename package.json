@@ -1,12 +1,15 @@
 {
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "express-graphql": "^0.6.12",
+    "graphql": "^0.13.2",
+    "mongoose": "^5.2.3"
   },
   "engines": {
     "node": "10.1.0",
-    "npm":"6.1.0"
+    "npm": "6.1.0"
   },
   "scripts": {
-    "start":"node index.js"
+    "start": "node index.js"
   }
 }
