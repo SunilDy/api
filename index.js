@@ -24,8 +24,8 @@ var allowCrossDomain = function(req, res, next) {
 app.use(allowCrossDomain);
 
 // Connecting to Mlab
-const DB_USER = process.env.DB_USER || 'admin';
-const DB_PASS = process.env.DB_PASS || 'LMAOkutta99MYAPI'
+const DB_USER = process.env.DB_USER;// || 'admin';
+const DB_PASS = process.env.DB_PASS;// || 'LMAOkutta99MYAPI'
 mongoose.connect(`mongodb://${DB_USER}:${DB_PASS}@ds239071.mlab.com:39071/my-api`);
 mongoose.connection.once('open', () => {
     console.log('Connected to Mlab')
